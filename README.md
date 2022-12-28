@@ -8,7 +8,7 @@ PMM Dump is a tool that fetches data from PMM and imports it into local PMM inst
 
 The PMM Dump code is [here](https://github.com/percona/pmm-dump).
 
-This repository contains the source files for [PMM Dump documentation](https://docs.percona.com/percona-operator-for-postgresql/index.html). The documentation is written in [Markdown markup language](https://en.wikipedia.org/wiki/Markdown) and is converted to HTML using [MkDocs](https://www.mkdocs.org/).
+This repository contains the source files for [PMM Dump documentation](https://docs.percona.com). The documentation is written in [Markdown markup language](https://en.wikipedia.org/wiki/Markdown) and is converted to HTML using [MkDocs](https://www.mkdocs.org/).
 
 ## Contributing
 
