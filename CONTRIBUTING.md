@@ -46,7 +46,7 @@ Contributions to the source tree should follow the workflow described below:
 Please take into account a few things:
 
 1. All documentation is written using the [Markdown markup language](https://en.wikipedia.org/wiki/Markdown). It allows easy publishing of various output formats such as HTML and PDF.
-2. We store the documentation as *.md files in the [main](https://github.com/percona/k8spg-docs/tree/main) branch of the repository and use [MkDocs](https://www.mkdocs.org/) to convert Markdown files into a static HTML website or PDF. The documentation is licensed under the [Attribution 4.0 International license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+2. We store the documentation as *.md files in the [main](https://github.com/percona/pmm_dump_docs/tree/main) branch of the repository and use [MkDocs](https://www.mkdocs.org/) to convert Markdown files into a static HTML website or PDF. The documentation is licensed under the [Attribution 4.0 International license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
 ## Code review
 
