@@ -1,0 +1,13 @@
+# MkDocs configuration for default Material-themed build
+INHERIT: mkdocs-base.yml
+
+site_url: https://docs.percona.com/pmm-dump/
+
+plugins:
+  section-index: {}
+  
+#Google Analytics configuration 
+extra:
+  analytics:
+    provider: google
+    property: UA-343802-3
