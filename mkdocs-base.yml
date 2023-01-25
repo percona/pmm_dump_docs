@@ -107,9 +107,15 @@ nav:
           
     - Export: 
           - "Overview": export.md
+          - "Exporting Query Analytics Data": export_qan.md
+          - "Exporting Specific Time Range": export_time_range.md
+          - "Exporting Metrics for Specific Database Instance": export_instance.md
+          - "Exporting Metrics for a Specific Dashboard": export_dashboard.md
+          - "Advanced Filtering": export_advanced_filtering.md 
           
     - Import: 
           - "Overview": import.md
+          - "load-pmm-dump": load-pmm-dump.md
 
     - Reference:
           - "Commands": commands.md

@@ -4,7 +4,7 @@ The following table lists all command-line options applicable within pmm-dump.
 
 | Name                 | Scope  | Value Type | Default                             | Description |
 |----------------------|--------|------------|-------------------------------------|-------------|
-| help                 | Global |        NaN |                                 NaN | Shows content-sensitive help. |
+| help                 | Global |        NaN |                                 NaN | Show content-sensitive help. |
 | help-long            | Global |        NaN |                                 NaN |  |
 | help-man             | Global |        NaN |                                 NaN |  |
 | pmm-url              | Global |     String |                                 NaN | PMM connection string, e.g. `--pmm-url=https://admin:admin@127.0.0.1:443` |

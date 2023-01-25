@@ -1,5 +1,7 @@
 # Using PMM Dump
 
+## Exporting Data
+
 PMM Dump exports collected metrics from PMM instance into tarball file. By default, name of the result file is `pmm-dump-{CURRENT_TIMESTAMP}.tar.gz`.
 
 ``` {.bash data-prompt="$" }
@@ -40,6 +42,8 @@ This command will export all performance metrics, collected in last 4 hours.
     
     PMM Dump would not export QAN data unless option `--dump-qan` was specified.
 
+## Importing Data
+
 To import data, fire up new PMM instance and run command `pmm-dump import`:
 
 ``` {.bash data-prompt="$" }
@@ -60,3 +64,29 @@ $ ./pmm-dump import --pmm-url='https://admin:admin@127.0.0.1' \
 To access imported data, connect to PMM and navigate to the dashboard you want.
 
 PMM Dump supports many custom options allowing to define which data to export. For more details, consult [Export](export.md). For import-related options, consult [Import](import.md). For full list of commands supported, consult [Commands](commands.md).
+
+!!! note
+
+    Utility [`load-pmm-dump`](load-pmm-dump.md) spins up PMM Server and setups it, then imports dump. We recommend you to use this semi-automatic solution for importing PMM dumps.
+
+## Running PMM Dump from the Docker Container
+
+Starting from version 2.27.0, PMM Server is shipped with PMM Dump. Therefore you do not need to install it. To run this shipped vesion use `docker exec` command:
+
+``` {.bash data-prompt="$" }
+$ sudo docker exec -it pmm-server pmm-dump export \
+> --pmm-url="https://admin:admin@`hostname -i`" --allow-insecure-certs
+```
+
+This will create an archive file under the `/opt` directory inside the PMM server docker container. You can copy it to your host machine with the command:
+
+``` {.bash data-prompt="$" }
+$ sudo docker cp pmm-server:/opt/pmm-dump-{UNIX TIMESTAMP}.tar.gz .
+```
+
+Then you can remove the archive from the container using the command:
+
+``` {.bash data-prompt="$" }
+$ sudo docker exec -it pmm-server rm /opt/pmm-dump-{UNIX TIMESTAMP}.tar.gz
+```
+Replace `pmm-dump-{UNIX TIMESTAMP}.tar.gz` with the actual file name in your environment.
