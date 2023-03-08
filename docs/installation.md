@@ -1,5 +1,15 @@
 # Install PMM Dump
 
+!!! note
+
+    Starting from version 2.27.0, PMM Server is shipped with PMM Dump. Therefore you do not need to install it. To run this shipped vesion use docker exec command:
+
+    ``` {.bash data-prompt="$" }
+    $ docker exec -it pmm-server pmm-dump help
+    usage: pmm-dump [<flags>] <command> [<args> ...]
+    ...
+    ```
+
 ## Binary Installation
 
 You can download the latest version of PMM Dump from [https://www.percona.com/get/pmm-dump](https://www.percona.com/get/pmm-dump). Once downloaded, set executable bit for the `pmm-dump` binary file and you are ready to use it.

@@ -63,7 +63,7 @@ $ ./pmm-dump import --pmm-url='https://admin:admin@127.0.0.1' \
 
 To access imported data, connect to PMM and navigate to the dashboard you want.
 
-PMM Dump supports many custom options allowing to define which data to export. For more details, consult [Export](export.md). For import-related options, consult [Import](import.md). For full list of commands supported, consult [Commands](commands.md).
+PMM Dump supports many custom options allowing to define which data to export. For more details, consult [Export](export.md). For import-related options, consult [Import](import.md). For full list of supported commands, consult [Commands](commands.md).
 
 !!! note
 

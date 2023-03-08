@@ -8,14 +8,14 @@ For example, to export only the "MySQL InnoDB Details" dashboard, use the comman
 
 ``` {.bash data-prompt="$" }
 $ pmm-dump export --pmm-url= 'http://admin:admin@127.0.0.1' \
-> --dashboard= 'MySQL InnoDB Details'
+> --dashboard='MySQL InnoDB Details'
 ```
 
 To export several dashboards, specify the `--dashboard` option more than once:
 
 ``` {.bash data-prompt="$" }
 $ pmm-dump export --pmm-url= 'http://admin:admin@127.0.0.1' \
-> --dashboard= 'MySQL InnoDB Details' \
+> --dashboard='MySQL InnoDB Details' \
 > --dashboard='Node Summary' --dashboard='MySQL Instance Summary'
 ```
 

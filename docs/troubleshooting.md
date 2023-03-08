@@ -41,3 +41,64 @@ However, you can access ClickHouse if you use the IP that Docker assigns to your
 An alternative solution would be publishing port 9000 at the time when you create a PMM Server container but we do not recommend it, because doing so opens outside access to your raw queries and is not secure.
 
 ## Import Issues
+
+### Import fails with message `failed to write chunk: non-OK response from victoria metrics: 413`
+
+Reason for this issue is that value of `client_max_body_size` in the [NGINX](https://www.nginx.com/) configuration of the PMM server is smaller than the maximum chunk size in the dump file.
+
+To resolve this issue, update the `client_max_body_size` parameter in the `/etc/nginx/conf.d/pmm.conf` under `server` config and reload the `nginx`.
+
+1. Obtain the `Max Chunk Size` in the dumpe file:
+
+``` {.bash data-prompt="$" }
+pmm-dump show-meta -d pmm_dump_data.tar.gz 
+Build: 
+PMM Version: 2.29.0-19.2207180503.2c740d9.el7
+Max Chunk Size: 24.8 MB (23.7 MiB)
+```
+
+2. Login to the Docker `pmm-server` container:
+
+``` {.bash data-prompt="$" }
+docker exec -it pmm-server /bin/bash
+```
+
+3. Open file `/etc/nginx/conf.d/pmm.conf` and update the `client_max_body_size` parameter:
+
+``` {.bash data-prompt="$" }
+vi /etc/nginx/conf.d/pmm.conf
+
+    client_max_body_size 25m;
+```
+
+4. Restart the `nginx` service:
+
+``` {.bash data-prompt="$" }
+supervisorctl restart nginx
+```
+
+5. Retry `pmm-dump import` command.
+
+### Import fails with message `error when processing native block: cannot unmarshal native block ... src is too short for reading string`
+
+Reason for this error is incompatibility between VictoriaMetrics formats, introduced in version 1.82.1. See [SE-83](https://jira.percona.com/browse/SE-83) for more details.
+
+To bypass this error, examine dump file with help of the [`verify-vm-native-data`](verify-vm-native-data.md) script:
+
+``` {.bash data-prompt="$" }
+p$ ./support-files/verify-vm-native-data pmm-dump-1651523184.tar.gz 
+Trying to verify chunk with vmctl v1.82.1
+2023/03/08 16:41:18 verifying block at path="/tmp/tmp.7h3rAq0Ay2/vm/1651518684-1651518984.bin"
+cannot parse block at path="/tmp/tmp.7h3rAq0Ay2/vm/1651518684-1651518984.bin", blocksCount=0, err=error when processing native block: cannot unmarshal native block from 23 bytes: cannot read timestampsData: src is too short for reading string with size 937; len(src)=1
+Dump data doesn't use VictoriaMetrics 1.82.1 native format
+
+Trying to verify chunk with vmctl v1.77.2
+2023/03/08 16:41:18 verifying block at path="/tmp/tmp.7h3rAq0Ay2/vm/1651518684-1651518984.bin"
+2023/03/08 16:41:19 successfully verified block at path="/tmp/tmp.7h3rAq0Ay2/vm/1651518684-1651518984.bin", blockCount=20196
+2023/03/08 16:41:19 Total time: 47.267605ms
+Dump data uses VictoriaMetrics 1.77.2 native format
+```
+
+And depending on the result, import dumps that use VictoriaMetrics 1.77.2, into PMM 2.32 or lower. Import dumps that use VictoriaMetris 1.82.1 into PMM 2.33 or higher.
+
+To completely avoid this error always export using JSON format (default starting from version 0.6.2).

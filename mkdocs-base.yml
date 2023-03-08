@@ -115,7 +115,10 @@ nav:
           
     - Import: 
           - "Overview": import.md
+
+    - Helper Scripts:
           - "load-pmm-dump": load-pmm-dump.md
+          - "verify-vm-native-data": verify-vm-native-data.md
 
     - Reference:
           - "Commands": commands.md
@@ -125,4 +128,6 @@ nav:
           - "Frequently Asked Questions": faq.md
           
     - Release Notes:
+          - "Release notes index": ReleaseNotes/index.md
+          - "PMM Dump 0.6.2-rc (2023-03-08)": ReleaseNotes/PMM-Dump-0.6.2-rc.md
           - "PMM Dump 0.6.1-rc (2022-07-01)": ReleaseNotes/PMM-Dump-0.6.1-rc.md

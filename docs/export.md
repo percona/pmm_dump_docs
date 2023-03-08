@@ -33,4 +33,5 @@ The following table lists all options applicable for the `export` command.
 | stdout               |    Boolean |                               False | Redirect output to STDOUT
 | workers              |    Integer |                 Number of CPU cores | The number of reading workers
 | export-services-info |    Boolean |                               False | Export overview info about all the services, that are being monitored
+| vm-native-data       |    Boolean |                               False | Use VictoriaMetrics' native export format. Reduces dump size, but can be incompatible between PMM versions
 
