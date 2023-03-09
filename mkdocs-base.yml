@@ -4,7 +4,7 @@ site_name: PMM Dump
 site_description: Documentation
 site_author: Percona LLC
 site_url: ""
-copyright: Percona LLC and/or its affiliates, &#169; 2009 - 2022
+copyright: Percona LLC and/or its affiliates, &#169; 2009 - 2023
 use_directory_urls: false
 repo_name: percona/pmm_dump_docs
 repo_url: https://github.com/percona/pmm_dump_docs
@@ -74,9 +74,9 @@ plugins:
   with-pdf:
     output_path: "_pdf/PMMDump.pdf"
     cover_title: "Documentation"
-    cover_subtitle: 0.6.1-rc (July 1, 2022)
+    cover_subtitle: 0.6.2-rc (March 8, 2023)
     author: "Percona Technical Documentation Team"
-    cover_logo: docs/assets/images/Kubernetes-PG.png
+    cover_logo: docs/assets/images/pmm_dump-logo.png
     custom_template_path: _resources/templates
     enabled_if_env: ENABLE_PDF_EXPORT
   # Check links - but extends build time significantly
@@ -91,8 +91,8 @@ plugins:
 extra: # Used in main.html template and can't be externalized
   edit_page_text: '<i class="uil uil-pen"></i> <b>Edit this page</b>'
   updated_text: '<i class="uil uil-refresh"></i> Page updated'
-  release: 0.6.1-rc
-  pmm2recommended: 2.33.0
+  release: 0.6.2-rc
+  pmm2recommended: 2.35.0
   version:
     provider: mike
 
