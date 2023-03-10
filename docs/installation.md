@@ -2,7 +2,7 @@
 
 !!! note
 
-    Starting from version 2.27.0, PMM Server is shipped with PMM Dump. Therefore you do not need to install it. To run this shipped vesion use docker exec command:
+    Starting from version 2.27.0, PMM Server is shipped with PMM Dump. Therefore you do not need to install it. To run this shipped version use docker exec command:
 
     ``` {.bash data-prompt="$" }
     $ docker exec -it pmm-server pmm-dump help

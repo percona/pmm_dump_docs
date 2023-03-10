@@ -48,7 +48,7 @@ Reason for this issue is that value of `client_max_body_size` in the [NGINX](htt
 
 To resolve this issue, update the `client_max_body_size` parameter in the `/etc/nginx/conf.d/pmm.conf` under `server` config and reload the `nginx`.
 
-1. Obtain the `Max Chunk Size` in the dumpe file:
+1. Obtain the `Max Chunk Size` in the dump file:
 
 ``` {.bash data-prompt="$" }
 pmm-dump show-meta -d pmm_dump_data.tar.gz 
@@ -99,6 +99,6 @@ Trying to verify chunk with vmctl v1.77.2
 Dump data uses VictoriaMetrics 1.77.2 native format
 ```
 
-And depending on the result, import dumps that use VictoriaMetrics 1.77.2, into PMM 2.32 or lower. Import dumps that use VictoriaMetris 1.82.1 into PMM 2.33 or higher.
+And depending on the result, import dumps that use VictoriaMetrics 1.77.2, into PMM 2.32 or lower. Import dumps that use VictoriaMetrics 1.82.1 into PMM 2.33 or higher.
 
 To completely avoid this error always export using JSON format (default starting from version 0.6.2).
