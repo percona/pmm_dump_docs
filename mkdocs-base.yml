@@ -14,6 +14,20 @@ theme:
   name: material
   logo: assets/images/percona-logo.svg
   favicon: assets/images/percona-favicon.ico
+  custom_dir: _resource/overrides/
+  font:
+    text: Poppins
+  
+  features:
+    - search.share
+    - search.highlight
+    - content.action.copy
+    - content.action.view
+    - content.action.edit
+    - content.tabs.link
+    - navigation.top
+    - navigation.tracking
+
   palette:
     #    - media: "(prefers-color-scheme: light)"
     scheme: percona-light
@@ -62,7 +76,7 @@ markdown_extensions:
 
 plugins:
   search: {}
-  git-revision-date: {}
+  git-revision-date-localized: {}
   macros:
     include_yaml:
       - "variables.yml"
@@ -89,8 +103,8 @@ plugins:
     canonical_version: null
 
 extra: # Used in main.html template and can't be externalized
-  edit_page_text: '<i class="uil uil-pen"></i> <b>Edit this page</b>'
-  updated_text: '<i class="uil uil-refresh"></i> Page updated'
+#  edit_page_text: '<i class="uil uil-pen"></i> <b>Edit this page</b>'
+#   updated_text: '<i class="uil uil-refresh"></i> Page updated'
   release: 0.6.2-rc
   pmm2recommended: 2.35.0
   version:
