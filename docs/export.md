@@ -1,6 +1,6 @@
-# Exporting Metrics
+# Exporting metrics
 
-To export PMM metrics, use `pmm-dump export` command. By default, PMM Dump exports all performance metrics and **does not** export QAN data. PMM Dump supports multiple options that could be used to tune which data will be present in the resulting dump.
+To export PMM metrics, use the `pmm-dump export` command. By default, PMM Dump exports all performance metrics and **does not** export QAN data. PMM Dump supports multiple options that could be used to tune which data will be present in the resulting dump.
 
 The following table lists all options applicable for the `export` command.
 

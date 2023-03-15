@@ -1,8 +1,8 @@
 # Troubleshooting
 
-## General Issues
+## General issues
 
-### How to Bypass SSL Errors During PMM Dump Export and Import
+### How to bypass SSL errors during PMM Dump export and import
 
 PMM Server uses self-signed certificates by default unless you replaced them with your own proper certificates as described [here](https://www.percona.com/doc/percona-monitoring-and-management/2.x/how-to/secure.html).
 
@@ -21,9 +21,9 @@ $ pmm-dump export --pmm-url='https://admin:admin@127.0.0.1' --allow-insecure-cer
 ...
 ```
 
-## Export Issues
+## Export issues
 
-### How to Bypass Error "Failed to create ClickHouse source" when Exporting Query Analytics Data
+### How to bypass error "Failed to create ClickHouse source" when exporting Query Analytics Data
 
 When you try to export Query Analytics (QAN) data with PMM Dump it may fail with an error "Failed to create ClickHouse source".
 
@@ -40,9 +40,9 @@ However, you can access ClickHouse if you use the IP that Docker assigns to your
 
 An alternative solution would be publishing port 9000 at the time when you create a PMM Server container but we do not recommend it, because doing so opens outside access to your raw queries and is not secure.
 
-## Import Issues
+## Import issues
 
-### Import fails with message `failed to write chunk: non-OK response from victoria metrics: 413`
+### Import fails with the message `failed to write chunk: non-OK response from victoria metrics: 413`
 
 Reason for this issue is that value of `client_max_body_size` in the [NGINX](https://www.nginx.com/) configuration of the PMM server is smaller than the maximum chunk size in the dump file.
 
@@ -79,7 +79,7 @@ supervisorctl restart nginx
 
 5. Retry `pmm-dump import` command.
 
-### Import fails with message `error when processing native block: cannot unmarshal native block ... src is too short for reading string`
+### Import fails with the message `error when processing native block: cannot unmarshal native block ... src is too short for reading string`
 
 Reason for this error is incompatibility between VictoriaMetrics formats, introduced in version 1.82.1. See [SE-83](https://jira.percona.com/browse/SE-83) for more details.
 

@@ -21,7 +21,7 @@ theme:
   features:
     - search.share
     - search.highlight
-    - content.action.copy
+    - content.code.copy
     - content.action.view
     - content.action.edit
     - content.tabs.link
@@ -114,30 +114,30 @@ extra: # Used in main.html template and can't be externalized
 nav:
 
     - Welcome: index.md
-    - Getting Started:
-          - "System Requirements": System-Requirements.md
+    - Getting started:
+          - "System requirements": system-requirements.md
           - "Installation": installation.md
           - "Usage": usage.md
           
-    - Export: 
+    - Export metrics: 
           - "Overview": export.md
           - "Exporting Query Analytics Data": export_qan.md
-          - "Exporting Specific Time Range": export_time_range.md
-          - "Exporting Metrics for Specific Database Instance": export_instance.md
-          - "Exporting Metrics for a Specific Dashboard": export_dashboard.md
-          - "Advanced Filtering": export_advanced_filtering.md 
+          - "Exporting specific time range": export_time_range.md
+          - "Exporting metrics for a specific database instance": export_instance.md
+          - "Exporting metrics for a specific dashboard": export_dashboard.md
+          - "Advanced filtering": export_advanced_filtering.md 
           
-    - Import: 
+    - Import metrics: 
           - "Overview": import.md
 
-    - Helper Scripts:
+    - Helper scripts:
           - "load-pmm-dump": load-pmm-dump.md
           - "verify-vm-native-data": verify-vm-native-data.md
 
     - Reference:
           - "Commands": commands.md
-          - "Options and Variables": options.md
-          - "Known Issues": known-issues.md
+          - "Options and variables": options.md
+          - "Known issues": known-issues.md
           - "Troubleshooting": troubleshooting.md
           - "Frequently Asked Questions": faq.md
           
