@@ -1,8 +1,8 @@
 # Using PMM Dump
 
-## Exporting Data
+## Exporting data
 
-PMM Dump exports collected metrics from PMM instance into tarball file. By default, name of the result file is `pmm-dump-{CURRENT_TIMESTAMP}.tar.gz`.
+PMM Dump exports collected metrics from PMM instance into a tarball file. By default, the name of the result file is `pmm-dump-{CURRENT_TIMESTAMP}.tar.gz`.
 
 ``` {.bash data-prompt="$" }
 $ pmm-dump export --pmm-url='https://admin:admin@127.0.0.1' \
@@ -42,9 +42,9 @@ This command will export all performance metrics, collected in last 4 hours.
     
     PMM Dump would not export QAN data unless option `--dump-qan` was specified.
 
-## Importing Data
+## Importing data
 
-To import data, fire up new PMM instance and run command `pmm-dump import`:
+To import data, fire up new PMM instance and run the `pmm-dump import` command:
 
 ``` {.bash data-prompt="$" }
 $ ./pmm-dump import --pmm-url='https://admin:admin@127.0.0.1' \
@@ -67,18 +67,18 @@ PMM Dump supports many custom options allowing to define which data to export. F
 
 !!! note
 
-    Utility [`load-pmm-dump`](load-pmm-dump.md) spins up PMM Server and setups it, then imports dump. We recommend you to use this semi-automatic solution for importing PMM dumps.
+    The [`load-pmm-dump`](load-pmm-dump.md) utility spins up PMM Server and sets it up, then imports the dump. We recommend you to use this semi-automatic solution for importing PMM dumps.
 
-## Running PMM Dump from the Docker Container
+## Running PMM Dump from the Docker container
 
-Starting from version 2.27.0, PMM Server is shipped with PMM Dump. Therefore you do not need to install it. To run this shipped version use `docker exec` command:
+Starting from version 2.27.0, PMM Server is shipped with PMM Dump. Therefore you do not need to install it. To run this shipped version use the `docker exec` command:
 
 ``` {.bash data-prompt="$" }
 $ sudo docker exec -it pmm-server pmm-dump export \
 > --pmm-url="https://admin:admin@`hostname -i`" --allow-insecure-certs
 ```
 
-This will create an archive file under the `/opt` directory inside the PMM server docker container. You can copy it to your host machine with the command:
+This will create an archive file under the `/opt` directory inside the PMM server Docker container. You can copy it to your host machine with the command:
 
 ``` {.bash data-prompt="$" }
 $ sudo docker cp pmm-server:/opt/pmm-dump-{UNIX TIMESTAMP}.tar.gz .

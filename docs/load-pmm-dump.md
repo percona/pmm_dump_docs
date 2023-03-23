@@ -22,7 +22,7 @@ This will get the PMM server Docker version tag from the `.tar.gz` file metadata
 
 After it's done, the tool will output some helpful information and copy/paste-ready commands. For example:
 
-```
+```{.text .no-copy}
 ## USEFUL INFORMATION AND COMMANDS.
 
 ## Port 443 is exported to:  49196

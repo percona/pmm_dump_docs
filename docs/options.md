@@ -1,4 +1,4 @@
-# PMM Dump Options
+# PMM Dump options
 
 The following table lists all command-line options applicable within pmm-dump.
 

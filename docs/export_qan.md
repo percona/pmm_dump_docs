@@ -1,10 +1,10 @@
-# Exporting Query Analytics Data
+# Exporting Query Analytics data
 
-PMM Dump exports the most recent four hours of performance metrics and does not export Query Analytics (QAN) data unless option `--dump-qan` is provided.
+PMM Dump exports the most recent four hours of performance metrics and does not export Query Analytics (QAN) data unless the `--dump-qan` option is provided.
 
-PMM Dump reads QAN data from the ClickHouse database by default on port 9000. PMM does not publish this port by default, therefore you can only export QAN data if you run PMM Dump on the same machine where the PMM server is running.
+By default, PMM Dump reads QAN data from the ClickHouse database on port 9000. PMM does not publish this port by default, therefore you can only export QAN data if you run PMM Dump on the same machine where the PMM server is running.
 
-First, identify which host IP docker is assigned to your PMM server:
+First, identify which host IP is assigned to your PMM server in Docker:
 
 ``` {.bash data-prompt="$" }
 $ sudo docker inspect pmm-server | grep IPAddress
@@ -22,15 +22,15 @@ $ sudo docker inspect pmm-server | grep IPAddress
     "172.17.0.2"
     ```
 
-Then specify this address, in our case `172.17.0.2`, in the option `--pmm-url`.
+Then specify this address, in our case `172.17.0.2`, in the `--pmm-url` option.
 
-To export both performance metrics and QAN data, specify the option `--dump-qan` when running the tool:
+To export both performance metrics and QAN data, specify the `--dump-qan` option when running the tool:
 
 ``` {.bash data-prompt="$" }
 $ pmm-dump export --pmm-url="http://admin:admin@172.17.0.2" --dump-qan
 ```
 
-If you want to export only QAN data and do not export performance metrics, also specify the option `--no-dump-core`:
+To export only QAN data and without exporting performance metrics, also specify the option `--no-dump-core`:
 
 ``` {.bash data-prompt="$" }
 $ pmm-dump export --pmm-url="http://admin:admin@172.17.0.2" \
@@ -39,4 +39,4 @@ $ pmm-dump export --pmm-url="http://admin:admin@172.17.0.2" \
 
 !!! warning
 
-    PMM Dump connects to the local ClickHouse instance and may not work if run on a different server than one where PMM Server is installed.
+    PMM Dump connects to the local ClickHouse instance and may not work if run on a different server than the one where PMM Server is installed.
