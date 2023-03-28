@@ -115,7 +115,7 @@ nav:
 
     - Welcome: index.md
     - Getting started:
-          - "System requirements": system-requirements.md
+          - "System requirements": "requirements.md"
           - "Installation": installation.md
           - "Usage": usage.md
           
