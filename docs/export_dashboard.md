@@ -1,4 +1,4 @@
-# Exporting Metrics for a Specific Dashboard
+# Exporting metrics for a specific dashboard
 
 PMM has many dashboards, and you may not want to export them all. Instead, you may prefer to export only a few of them related to the performance issue you are experiencing.
 

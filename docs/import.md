@@ -1,6 +1,6 @@
-# Importing Metrics
+# Importing metrics
 
-To import PMM metrics into local PMM instance, use `pmm-dump import` command. By default, PMM Dump imports all performance metrics and **does not** import QAN data even if it exists in the dump file.
+To import PMM metrics into local PMM instance, use the `pmm-dump import` command. By default, PMM Dump imports all performance metrics and **does not** import QAN data even if it exists in the dump file.
 
 The following table lists all options applicable for the `import` command.
 
