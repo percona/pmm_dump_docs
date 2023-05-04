@@ -45,6 +45,8 @@ PMM Dump allows you to share monitoring data, collected by you PMM server, with 
 
 * [Release notes index](ReleaseNotes/index.md)
 
+* [PMM Dump 0.6.3-rc (2023-05-04)](ReleaseNotes/PMM-Dump-0.6.3-rc.md)
+
 * [PMM Dump 0.6.2-rc (2023-03-08)](ReleaseNotes/PMM-Dump-0.6.2-rc.md)
 
 * [PMM Dump 0.6.1-rc (2022-07-01)](ReleaseNotes/PMM-Dump-0.6.1-rc.md)
