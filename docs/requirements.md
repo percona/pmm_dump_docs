@@ -4,6 +4,7 @@ The `pmm-dump` utility runs as a client to PMM Server.
 
 The following conditions should be met:
 
+* The source PMM server should be version 2.12 or above.
 * The host where PMM Dump is installed, should be able to access PMM Server host via HTTPS or HTTP protocols.
 * User account with administrator access should be created within PMM.
 * ClickHouse port (default is 9000) should be open to collect QAN data.
