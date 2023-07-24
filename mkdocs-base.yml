@@ -140,7 +140,11 @@ nav:
           - "Known issues": known-issues.md
           - "Troubleshooting": troubleshooting.md
           - "Frequently Asked Questions": faq.md
-          
+
+    - Contributing:
+          - "Contributing": contributing.md
+          - "Testing": testing.md
+
     - Release Notes:
           - "Release notes index": ReleaseNotes/index.md
           - "PMM Dump 0.6.4-rc (2023-06-30)": ReleaseNotes/PMM-Dump-0.6.4-rc.md

@@ -26,6 +26,14 @@ Version: 0.6.1-rc, Build: e2bc9a9
 
 Alternatively, you can download PMM Dump binary from [PMM Dump GitHub Releases](https://github.com/percona/pmm-dump/releases) page. At this place you will find all published versions of PMM Dump.
 
+### Installing PMM Dump on ARM
+
+!!! warning
+
+    ARM architecture is not officially supported. Binaries are not properly tested. Use them on your own risk.
+
+ARM builds for Linux, MacOS, and Windows platforms are available at [Percona-Lab/percona-on-arm](https://github.com/Percona-Lab/percona-on-arm/releases). 
+
 ## Compiling from source
 
 1. Check if version of Go is 1.16 or newer.

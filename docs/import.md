@@ -20,3 +20,4 @@ The following table lists all options applicable for the `import` command.
 | allow-insecure-certs |    Boolean |                               False | Accept any certificate presented by the server and any host name in that certificate
 | dump-path (-d)       |     String | pmm-dump-{CURRENT_TIMESTAMP}.tar.gz | Path to the dump file
 | workers              |    Integer |                 Number of CPU cores | The number of writing workers
+| vm-content-limit     |    Integer |                                   0 | Limit the chunk content size for VictoriaMetrics (in bytes). Doesn't work with native format.

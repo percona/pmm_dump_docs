@@ -34,4 +34,5 @@ The following table lists all command-line options applicable within pmm-dump.
 | workers              | Export / Import |    Integer |                 Number of CPU cores | The number of reading/writing workers
 | export-services-info | Export |    Boolean |                               False | Export overview info about all the services, that are being monitored
 | vm-native-data       | Export |    Boolean |                               False | Use VictoriaMetrics' native export format. Reduces dump size, but can be incompatible between PMM versions
+| vm-content-limit     | Import |    Integer |                                   0 | Limit the chunk content size for VictoriaMetrics (in bytes). Doesn't work with native format.
 | prettify             |   Meta |    Boolean |                                True | Print meta in human readable format. To revert value of this option, use syntax `no-prettify`
