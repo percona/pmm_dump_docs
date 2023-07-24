@@ -59,3 +59,6 @@ Available options are:
 
 To use existing PMM Server instance either for export or import, set option `USE_EXISTING_PMM` to `true` and `PMM_URL` to valid URL of your PMM instance.
 
+## PMM versions compatibility test
+
+PMM versions compatibility test `TestPMMCompatibility` uses configuration file `./internal/test/e2e/data/versions.yaml` with list of versions that need to be checked for compatibility. Edit this file before running tests if you need add or remove particular version.
