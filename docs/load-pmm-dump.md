@@ -17,18 +17,25 @@ There are three ways to run the script (all of them require at least one paramet
 
 - This will assume latest PMM v2 server version, and will deploy one container: `pmm-server-CS0012345`
 
-`load-pmm-dump CS0012345`
+``` {.bash data-prompt="$" }
+load-pmm-dump CS0012345
+```
 
 - This will use the second argument as PMM server Docker version tag (all other possible arguments are ignored).
 
-`load-pmm-dump CS0012345 2.26.0`
+``` {.bash data-prompt="$" }
+load-pmm-dump CS0012345 2.26.0
+```
 
 - This will get the PMM server Docker version tag from the .tar.gz/.tgz file metadata, and it will use it for the container. Additionally, it will try to automatically import the data with `pmm-dump import` (optionally, other files can be added as third and following arguments).
 
-`load-pmm-dump CS0012345 /path/to/pmm-dump-1653879141.tar.gz`
+``` {.bash data-prompt="$" }
+load-pmm-dump CS0012345 /path/to/pmm-dump-1653879141.tar.gz
+```
 
 After it's done, the tool will output some helpful information and copy/paste-ready commands. For example:
-```
+
+```{.text .no-copy}
 ## USEFUL INFORMATION AND COMMANDS.
 
 ## Port 443 is exported to: 49277
