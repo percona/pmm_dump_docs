@@ -54,7 +54,7 @@ ARM builds for Linux, MacOS, and Windows platforms are available at [Percona-Lab
     ``` {.bash data-prompt="$" }
     $ cd pmm-dump
     $ make build
-    $ go build -ldflags "-X 'main.GitBranch=main' -X 'main.GitCommit=b3804a9' -X 'main.GitVersion=v2.32.0'" -o pmm-dump pmm-dump/cmd/pmm-dump
+    go build -ldflags "-X 'main.GitBranch=main' -X 'main.GitCommit=b3804a9' -X 'main.GitVersion=v2.32.0'" -o pmm-dump pmm-dump/cmd/pmm-dump
     ``` 
 
 This will compile the `pmm-dump` binary.
