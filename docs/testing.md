@@ -1,13 +1,13 @@
 # Testing PMM Dump
 
-PMM Dump source code is shipped with regression tests that use test PMM and MongoDB instances. These instances are started automatically when tests are started unless you change this behavior in the configuration files.
+PMM Dump source code is shipped with unit and end-to-end tests that use test PMM and MongoDB instances. These instances are started automatically when tests are started unless you change this behavior in the configuration files.
 
 ## Requirements
 
 - Go compiler
 - Docker
 
-## Running Regression Tests
+## Running All Tests
 
 Run
 
@@ -15,7 +15,25 @@ Run
 $ make run-tests
 ```
 
-This command will initialize test setup, then run all regression tests, then shutdown the test setup. If any of tests fails, all subsequent tests will be stopped.
+This command will initialize test setup, then run all tests, then shutdown the test setup. If any of tests fails, all subsequent tests will be stopped.
+
+## Running End-To-End(e2e) Tests
+
+Run
+
+``` {.bash data-prompt="$" }
+$ make make run-e2e-tests
+```
+
+See [Exectuing e2e tests](https://github.com/percona/pmm-dump/blob/main/internal/test/README.md) for details.
+
+## Running Unit Tests
+
+Run
+
+``` {.bash data-prompt="$" }
+$ make run-unit-tests
+```
 
 ## Shutting Down Test Environment
 
