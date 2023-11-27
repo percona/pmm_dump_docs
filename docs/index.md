@@ -5,5 +5,5 @@ The `pmm_dump` client utility performs a logical backup of the performance metri
 PMM Dump allows you to share monitoring data, collected by your PMM server, with Percona Support team securely.
 
 !!! hint alert alert-success "Important"
-    Starting with PMM 2.41, the standalone client utility has been seamlessly integrated into PMM and is easily accessible from the main menu **> Help > PMM Dump**.
-    We highly recommend transitioning to the integrated version, unless you need to use specific functionalities like filtering or other features exclusive to the utility, or if you need to stay on PMM version 2.40 or older.
+    Starting with PMM 2.41, the standalone client utility is also available straight from PMM, and you can access it from the main menu **> Help > PMM Dump**.
+    For a better user experience, we recommend generating PMM Dump datasets from the PMM built-in version. For more information, check out the [PMM Dump topic in the PMM documentation](https://docs.percona.com/percona-monitoring-and-management/how-to/PMM_dump.html).
