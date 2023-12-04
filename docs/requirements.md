@@ -11,7 +11,7 @@ If you want to run `pmm-dump` external to the PMM container/AMI/VM, the followin
 
 !!! note
 
-     By default, Docker installation of PMM does not publish the ClickHouse port. This means you can only collect QAN metrics if run PMM Dump on the same host as PMM and use Docker internal IP address. To overwrite this behavior start PMM instance with option `--publish 9000:9000`:
+     By default, Docker installation of PMM does not publish the ClickHouse port. This means the tool can only collect QAN metrics if `pmm-dump` is run from within the PMM Server container or on the same host as PMM (AMI/OVF). To overwrite this behavior start PMM instance with option `--publish 9000:9000`:
 
      ``` {.bash data-prompt="$" }
      $ docker run --detach --restart always \
