@@ -1,8 +1,8 @@
 # System requirements
 
-The `pmm-dump` utility runs as a client to PMM Server.
+The `pmm-dump` utility runs as a client to PMM Server, a compatible version is already bundled with each version of PMM.  
 
-The following conditions should be met:
+If you want to run `pmm-dump` external to the PMM container/AMI/VM, the following conditions should be met:
 
 * The source PMM server should be version 2.12 or above.
 * The host where PMM Dump is installed, should be able to access PMM Server host via HTTPS or HTTP protocols.
