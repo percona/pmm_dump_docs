@@ -1,8 +1,8 @@
 # System requirements
 
-The `pmm-dump` utility runs as a client to PMM Server.
+The `pmm-dump` utility runs as a client to PMM Server, a compatible version is already bundled with each version of PMM.  
 
-The following conditions should be met:
+If you want to run `pmm-dump` external to the PMM container/AMI/VM, the following conditions should be met:
 
 * The source PMM server should be version 2.12 or above.
 * The host where PMM Dump is installed, should be able to access PMM Server host via HTTPS or HTTP protocols.
@@ -11,7 +11,7 @@ The following conditions should be met:
 
 !!! note
 
-     By default, Docker installation of PMM does not publish the ClickHouse port. This means you can only collect QAN metrics if run PMM Dump on the same host as PMM and use Docker internal IP address. To overwrite this behavior start PMM instance with option `--publish 9000:9000`:
+     By default, Docker installation of PMM does not publish the ClickHouse port. This means the tool can only collect QAN metrics if `pmm-dump` is run from within the PMM Server container or on the same host as PMM (AMI/OVF). To overwrite this behavior start PMM instance with option `--publish 9000:9000`:
 
      ``` {.bash data-prompt="$" }
      $ docker run --detach --restart always \
