@@ -189,6 +189,7 @@ nav:
 
     - Release Notes:
           - "Release notes index": ReleaseNotes/index.md
+          - "PMM Dump 0.7.1-ga (2025-04-02)": ReleaseNotes/PMM-Dump-0.7.1-ga.md
           - "PMM Dump 0.7.0-ga (2023-11-22)": ReleaseNotes/PMM-Dump-0.7.0-ga.md
           - "PMM Dump 0.6.4-rc (2023-06-30)": ReleaseNotes/PMM-Dump-0.6.4-rc.md
           - "PMM Dump 0.6.3-rc (2023-05-04)": ReleaseNotes/PMM-Dump-0.6.3-rc.md
