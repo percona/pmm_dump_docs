@@ -12,11 +12,35 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  logo: assets/images/percona-logo.svg
-  favicon: assets/images/percona-favicon.ico
-  custom_dir: _resource/overrides/
+  custom_dir: _resource/overrides
+  logo: assets/pmm-mark.svg
+  favicon: assets/pmm-fav.svg
   font:
-    text: Poppins
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    edit: material/file-edit-outline
+    view: material/file-eye-outline
+
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Color theme set to Automatic. Click to change
+    - media: "(prefers-color-scheme: light)"
+      scheme: percona-light
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Color theme set to Light Mode. Click to change
+    - media: "(prefers-color-scheme: dark)"
+      scheme: percona-dark
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Color theme set to Dark Mode. Click to change
   
   features:
     - search.share
@@ -28,55 +52,72 @@ theme:
     - navigation.top
     - navigation.tracking
 
-  palette:
-    #    - media: "(prefers-color-scheme: light)"
-    scheme: percona-light
-#      toggle:
-#        icon: material/toggle-switch-off-outline
-#        name: Switch to night mode
-#    - media: "(prefers-color-scheme: dark)"
-#      scheme: slate
-#      toggle:
-#        icon: material/toggle-switch
-#        name: Switch to day mode
-
 extra_css:
   - https://unicons.iconscout.com/release/v3.0.3/css/line.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css
   - css/percona.css
   - css/lightgallery.min.css
+  - css/extra.css
   - css/nocopy.css
+  - css/design.css
+  - css/osano.css
+  - css/pmm.css
 
 extra_javascript:
   - js/promptremover.js
 #  - js/version-select.js
   - js/toctree.js
   - js/lightgallery.min.js
+  - js/consent.js
+
 
 markdown_extensions:
   attr_list: {}
   toc:
-    permalink: True
+    permalink: true
+    title: On this page
+    toc_depth: 3
+  md_in_html: {}
   admonition: {}
-  def_list: {}
+  footnotes: {}
+  def_list: {} # https://michelf.ca/projects/php-markdown/extra/#def-list
   meta: {}
-  smarty: { smart_angled_quotes: true }
+  md_in_html: {}
+  smarty:
+      {smart_angled_quotes: true}
   pymdownx.details: {}
   pymdownx.mark: {}
   pymdownx.smartsymbols: {}
+  pymdownx.tabbed: 
+      {alternate_style: true}
   pymdownx.tilde: {}
   pymdownx.superfences: {}
-#  pymdownx.tabbed:
-#    alternate_style: true
+  pymdownx.tabbed:
+    alternate_style: true
+  pymdownx.tasklist:
+    custom_checkbox: true
+  pymdownx.snippets:
+      base_path: ["snippets"]
+#      auto_append:
+#        - services-banner.md
   pymdownx.highlight:
-    linenums: false
+    use_pygments: true
   pymdownx.emoji:
-    emoji_index: !!python/name:materialx.emoji.twemoji
-    emoji_generator: !!python/name:materialx.emoji.to_svg
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    options:
+      custom_icons:
+        - _resource/overrides/.icons
 
 plugins:
   search: {}
   git-revision-date-localized: {}
+  meta-descriptions:
+    export_csv: false
+    quiet: false
+    enable_checks: false
+    min_length: 50
+    max_length: 160
   macros:
     include_yaml:
       - "variables.yml"
@@ -114,6 +155,7 @@ extra: # Used in main.html template and can't be externalized
 nav:
 
     - Welcome: index.md
+    - get-help.md
     - Getting started:
           - "System requirements": "requirements.md"
           - "Installation": installation.md
