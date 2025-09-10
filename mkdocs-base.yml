@@ -179,6 +179,7 @@ nav:
     - Reference:
           - "Commands": commands.md
           - "Options and variables": options.md
+          - "Environment variables": environment.md
           - "Known issues": known-issues.md
           - "Troubleshooting": troubleshooting.md
           - "Frequently Asked Questions": faq.md
@@ -189,6 +190,7 @@ nav:
 
     - Release Notes:
           - "Release notes index": ReleaseNotes/index.md
+          - "PMM Dump 0.7.2-ga (2025-TBD)": ReleaseNotes/PMM-Dump-0.7.2-ga.md
           - "PMM Dump 0.7.1-ga (2025-04-02)": ReleaseNotes/PMM-Dump-0.7.1-ga.md
           - "PMM Dump 0.7.0-ga (2023-11-22)": ReleaseNotes/PMM-Dump-0.7.0-ga.md
           - "PMM Dump 0.6.4-rc (2023-06-30)": ReleaseNotes/PMM-Dump-0.6.4-rc.md

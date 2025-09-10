@@ -1,8 +1,8 @@
 # Exporting metrics for a specific dashboard
 
-PMM has many dashboards, and you may not want to export them all. Instead, you may prefer to export only a few of them related to the performance issue you are experiencing.
+PMM has many dashboards, and you may not want to export them all. Instead, you may prefer to export only a few related to the performance issue you are experiencing.
 
-PMM Dump supports the option `--dashboard` that allows specifying which dashboard name or names you want to export.
+PMM Dump supports the option `--dashboard` that allows you to specify which dashboard name or names you want to export.
 
 For example, to export only the "MySQL InnoDB Details" dashboard, use the command:
 
@@ -21,9 +21,9 @@ $ pmm-dump export --pmm-url= 'http://admin:admin@127.0.0.1' \
 
 This command exports the dashboards "MySQL InnoDB Details", "Node Summary", and "MySQL Instance Summary".
 
-You can combine the option `--dashboard` with the option `--instance` to export only required dashboards for the instances you need help with.
+You can combine the option `--dashboard` with the option `--instance` to export only the required dashboards for the instances you need help with.
 
-The following will export dashboards "MongoDB Instance Summary" and "Node Summary" for instances `supp-mongo_3599`, `supp-mongo_3600`, and `supp-mongo-3601`:
+The following will export dashboards "MongoDB Instance Summary" and "Node Summary" for instances `supp-mongo_3599`, `supp-mongo_3600`, and `supp-mongo_3601`:
 
 ``` {.bash data-prompt="$" }
 $ pmm-dump export --pmm-url= 'http://admin:admin@127.0.0.1' \

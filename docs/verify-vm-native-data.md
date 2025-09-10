@@ -10,6 +10,6 @@ error when processing native block: cannot unmarshal native block from ... bytes
 cannot read ...: src is too short for reading string with size ...; len(src)=1
 ```
 
-Dumps that use 1.77.2 could be imported into PMM 2.32 or lower. Dumps that use 1.82.1 format could be imported into PMM 2.33 or higher.
+Dumps that use 1.77.2 can be imported into PMM 2.32 or lower. Dumps that use 1.82.1 format can be imported into PMM 2.33 or higher.
 
 See [`SE-83`](https://jira.percona.com/browse/SE-83) for more details.

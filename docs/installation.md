@@ -2,7 +2,7 @@
 
 !!! note
 
-    Starting from version 2.27.0, PMM Server is shipped with PMM Dump. Therefore you do not need to install it. To run this shipped version use the `docker exec` command as follows:
+    Starting from version 2.27.0, PMM Server is shipped with PMM Dump. Therefore, you do not need to install it. To run this shipped version, use the `docker exec` command as follows:
 
     ``` {.bash data-prompt="$" }
     $ docker exec -it pmm-server pmm-dump help
@@ -12,7 +12,7 @@
 
 ## Binary installation
 
-You can download the latest version of PMM Dump from [Percona website](https://www.percona.com/get/pmm-dump). Once downloaded, set executable bit for the `pmm-dump` binary file and you are ready to use it.
+You can download the latest version of PMM Dump from the [Percona website](https://www.percona.com/get/pmm-dump). Once downloaded, set the executable bit for the `pmm-dump` binary file and you are ready to use it.
 
 ``` {.bash data-prompt="$" }
 $ curl -OL https://www.percona.com/get/pmm-dump
@@ -24,26 +24,26 @@ $ ./pmm-dump version
 Version: 0.6.1-rc, Build: e2bc9a9
 ```
 
-Alternatively, you can download PMM Dump binary from [PMM Dump GitHub Releases](https://github.com/percona/pmm-dump/releases) page. At this place you will find all published versions of PMM Dump.
+Alternatively, you can download the PMM Dump binary from the [PMM Dump GitHub Releases](https://github.com/percona/pmm-dump/releases) page. Here you will find all published versions of PMM Dump.
 
 ### Installing PMM Dump on ARM
 
 !!! warning
 
-    ARM architecture is not officially supported. Binaries are not properly tested. Use them on your own risk.
+    ARM architecture is not officially supported. Binaries are not properly tested. Use them at your own risk.
 
-ARM builds for Linux, MacOS, and Windows platforms are available at [Percona-Lab/percona-on-arm](https://github.com/Percona-Lab/percona-on-arm/releases). 
+ARM builds for Linux, macOS, and Windows platforms are available at [Percona-Lab/percona-on-arm](https://github.com/Percona-Lab/percona-on-arm/releases). 
 
 ## Compiling from source
 
-1. Check if version of Go is 1.16 or newer.
+1. Check if the version of Go is 1.16 or newer.
 
     ``` {.bash data-prompt="$" }
     $ go version 
     go version go1.19.4 linux/amd64
     ```
 
-2. Clone PMM Dump [GitHub repository](https://github.com/percona/pmm-dump):
+2. Clone the PMM Dump [GitHub repository](https://github.com/percona/pmm-dump):
 
     ``` {.bash data-prompt="$" }
     $ git clone git@github.com:percona/pmm-dump.git

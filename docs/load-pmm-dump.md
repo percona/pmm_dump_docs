@@ -1,27 +1,27 @@
 # load-pmm-dump
 
-The utility `load-pmm-dump` creates empty PMM instance and prints commands which you can use to load the dump into test PMM instance, redirect PMM port to another machine, and destroy docker PMM container after use.
+The utility `load-pmm-dump` creates an empty PMM instance and prints commands which you can use to load the dump into a test PMM instance, redirect the PMM port to another machine, and destroy the Docker PMM container after use.
 
-The main goal of the utility is to aide in handling importing data coming from a PMM dump export file (or files). The load-pmm-dump script will:
+The main goal of the utility is to aid in handling imported data coming from a PMM dump export file (or files). The load-pmm-dump script will:
 
 - Create a PMM server container
-- Disable the nginx cap for client_max_body_size
+- Disable the nginx cap for `client_max_body_size`
 - Try to automatically import pmm-dump files
 - Provide useful commands and information on how to further use the container
 
-**Note:** the PMM server container will be created without a data volume/container, so this tool is NOT for deploying any other kind of PMM server other than ones holding volatile and temporary data!
+**Note:** The PMM server container will be created without a data volume/container, so this tool is NOT for deploying any other kind of PMM server other than ones holding volatile and temporary data!
 
 ## Running the script
 
 There are three ways to run the script (all of them require at least one parameter -- the ticket number or container name string).
 
-- This will assume latest PMM v2 server version, and will deploy one container: `pmm-server-CS0012345`
+- This will assume the latest PMM v2 server version, and will deploy one container: `pmm-server-CS0012345`
 
 ``` {.bash data-prompt="$" }
 load-pmm-dump CS0012345
 ```
 
-- This will use the second argument as PMM server Docker version tag (all other possible arguments are ignored).
+- This will use the second argument as the PMM server Docker version tag (all other possible arguments are ignored).
 
 ``` {.bash data-prompt="$" }
 load-pmm-dump CS0012345 2.26.0

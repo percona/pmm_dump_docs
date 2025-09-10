@@ -2,7 +2,7 @@
 
 PMM Dump exports the most recent four hours of performance metrics and does not export Query Analytics (QAN) data unless the `--dump-qan` option is provided.
 
-By default, PMM Dump reads QAN data from the ClickHouse database on port 9000. PMM does not publish this port by default, therefore you can only export QAN data if you run PMM Dump on the same machine where the PMM server is running.
+By default, PMM Dump reads QAN data from the ClickHouse database on port 9000. PMM does not publish this port by default; therefore, you can only export QAN data if you run PMM Dump on the same machine where the PMM server is running.
 
 First, identify which host IP is assigned to your PMM server in Docker:
 

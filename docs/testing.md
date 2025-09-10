@@ -15,9 +15,9 @@ Run
 $ make run-tests
 ```
 
-This command will initialize test setup, then run all tests, then shutdown the test setup. If any of tests fails, all subsequent tests will be stopped.
+This command will initialize the test setup, then run all tests, then shut down the test setup. If any of the tests fail, all subsequent tests will be stopped.
 
-## Running End-To-End(e2e) Tests
+## Running End-To-End (e2e) Tests
 
 Run
 
@@ -25,7 +25,7 @@ Run
 $ make make run-e2e-tests
 ```
 
-See [Exectuing e2e tests](https://github.com/percona/pmm-dump/blob/main/internal/test/README.md) for details.
+See [Executing e2e tests](https://github.com/percona/pmm-dump/blob/main/internal/test/README.md) for details.
 
 ## Running Unit Tests
 
@@ -37,7 +37,7 @@ $ make run-unit-tests
 
 ## Shutting Down Test Environment
 
-If, for some reason, test environment was not destroyed automatically, you can destroy it by command
+If, for some reason, the test environment was not destroyed automatically, you can destroy it by running
 
 ``` {.bash data-prompt="$" }
 $ make down-tests
@@ -50,13 +50,13 @@ When you run
 ``` {.bash data-prompt="$" }
 $ make run-tests
 ```
-for the first time, it implicitly calls command
+for the first time, it implicitly calls the command
 
 ``` {.bash data-prompt="$" }
 $ make init-tests
 ```
 
-that creates temporary directory `test` for test configuration and results. Files `.env.test` and `.env2.test` define environment for your test instances. Instance that contain test data that needs to be **exported**, defined in `.env.test`. Instance that tests **import**, defined in `.env2.test`. All subsequent test runs keep these files if they exist and if you need to redefine ports and Docker container names, you can do it here.
+that creates a temporary directory `test` for test configuration and results. Files `.env.test` and `.env2.test` define the environment for your test instances. The instance that contains test data that needs to be **exported** is defined in `.env.test`. The instance that tests **import** is defined in `.env2.test`. All subsequent test runs keep these files if they exist, and if you need to redefine ports and Docker container names, you can do it here.
 
 Available options are:
 
@@ -67,16 +67,16 @@ Available options are:
 | PMM_MONGO_NAME       |                   mongo-test |                 mongo-test-2 | Container name for MongoDB test instance               |
 | PMM_HTTP_PORT        |                         8282 |                         8283 | HTTP port for PMM                                      |
 | PMM_HTTPS_PORT       |                         8384 |                         8385 | HTTPS port for PMM                                     |
-| CLICKHOUSE_PORT      |                         9001 |                         9002 | Clickhouse port (for QAN export/import)                |
-| CLICKHOUSE_PORT_HTTP |                         8124 |                         8125 | HTTP port for Clickhouse (for QAN export/import)       |
+| CLICKHOUSE_PORT      |                         9001 |                         9002 | ClickHouse port (for QAN export/import)                |
+| CLICKHOUSE_PORT_HTTP |                         8124 |                         8125 | HTTP port for ClickHouse (for QAN export/import)       |
 | MONGO_PORT           |                        27018 |                        27019 | MongoDB port                                           |
 | USE_EXISTING_PMM     |                        false |                        false | Use existing PMM Server installation?                  |
-| PMM_URL              | http://admin:admin@localhost | http://admin:admin@localhost | PMM Server url (used only while USE_EXISTING_PMM=true) |
+| PMM_URL              | http://admin:admin@localhost | http://admin:admin@localhost | PMM Server URL (used only while USE_EXISTING_PMM=true) |
 
 ## Using existing PMM Server instance
 
-To use existing PMM Server instance either for export or import, set option `USE_EXISTING_PMM` to `true` and `PMM_URL` to valid URL of your PMM instance.
+To use an existing PMM Server instance either for export or import, set the option `USE_EXISTING_PMM` to `true` and `PMM_URL` to the valid URL of your PMM instance.
 
 ## PMM versions compatibility test
 
-PMM versions compatibility test `TestPMMCompatibility` uses configuration file `./internal/test/e2e/data/versions.yaml` with list of versions that need to be checked for compatibility. Edit this file before running tests if you need add or remove particular version.
+The PMM versions compatibility test `TestPMMCompatibility` uses the configuration file `./internal/test/e2e/data/versions.yaml` with a list of versions that need to be checked for compatibility. Edit this file before running tests if you need to add or remove a particular version.
