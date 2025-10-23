@@ -18,16 +18,19 @@ The following table lists all options applicable for the `export` command.
 | encryption           |    Boolean |                                True | Enable encryption
 | end-ts               |     String |                   Current timestamp | End date-time to filter exported metrics in RFC3339 format, e.g. 2023-01-03T15:04:05Z07:00
 | export-services-info |    Boolean |                               False | Export overview info about all the services that are being monitored
-| help                 |    Boolean |                                None | Show context-sensitive help
+| force-pass-filepath  |    Boolean |                               False | Overwrite the file where the encrypted password is stored
+| help                 |    Boolean |                               False | Show context-sensitive help
 | ignore-load          |    Boolean |                               False | Disable checking for load threshold values
 | instance             |     String |                                None | Service name to filter instances. Use multiple times to filter by multiple instances.
-| just-key             |    Boolean |                               False | Disable logging and print only generated encryption key
+| just-key             |    Boolean |                                True | Disable logging and print only generated encryption key
 | max-load             |     String |              CPU=70,RAM=80,MYRAM=10 | Max load threshold values. For the CPU value, it is overall regardless of cores count: 0-100%. When the value of `max-load` is reached, `pmm-dump` stops executing and waits until resources are back to the specified values.
 | pass                 |     String |                                None | Encryption password
 | pass-filepath        |     String |                                None | File path where the generated password needs to be stored
+| pmm-cookie           |     String |                                None | PMM Auth cookie
 | pmm-host             |     String |                                None | PMM server host (with scheme), e.g. `--pmm-host=https://127.0.0.1`
 | pmm-pass             |     String |                                None | PMM credentials password
 | pmm-port             |    Integer |                                None | PMM server port
+| pmm-token            |     String |                                None | PMM API token
 | pmm-url              |     String |                                None | PMM connection string, e.g. `--pmm-url=https://admin:admin@127.0.0.1:443`
 | pmm-user             |     String |                                None | PMM credentials user
 | start-ts             |     String |         Current timestamp - 4 hours | Start date-time to filter exported metrics in RFC3339 format, e.g. 2023-01-02T15:04:05Z07:00
