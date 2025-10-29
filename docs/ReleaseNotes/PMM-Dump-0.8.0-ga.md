@@ -16,11 +16,11 @@
 
 * [SE-97](https://jira.percona.com/browse/SE-97) PMM-Dump Tool - SecOps Request
 
-PMM Dump now supports encryption. Dump files are encrypted by default by the auto-generated password or user-defined password, specified by the option `--pass`. Auto-generated password either printed to the screen in the end of the `export` operation or stored into a file, specified by the option `--pass-filepath`.
+PMM Dump now supports encryption. Dump files are encrypted by default with an auto-generated password or a user-defined password, specified by the option `--pass`. The auto-generated password is either printed to the screen at the end of the `export` operation or stored in a file specified by the option `--pass-filepath`.
 
-Output logging to `STDOUT` is disabled for the `export` operation by default and can be overriden by specifying option `--no-just-key`. You can also obtain log from the file `log.json` in the PMM Dump resulting archive.
+Output logging to `STDOUT` is disabled for the `export` operation by default and can be overridden by specifying the option `--no-just-key`. You can also obtain the log from the file `log.json` in the PMM Dump resulting archive.
 
-Encryption can be disabled if you specify option `no-encryption`.
+Encryption can be disabled with the option `--no-encryption`.
 
 ## Bugs Fixed
 

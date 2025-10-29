@@ -9,7 +9,7 @@ The following table lists all options applicable for the `export` command.
 | allow-insecure-certs |    Boolean |                               False | Accept any certificate presented by the server and any host name in that certificate
 | chunk-rows           |    Integer |                                1000 | Amount of rows to fit into a single chunk (QAN metrics). Affects time to export data and size of the resulting dump.
 | chunk-time-range     |     String |                      5m (5 minutes) | Time range to be fit into a single chunk (core metrics). Example values: '45s' (45 seconds), '5m' (5 minutes), '1h' (1 hour). Affects time to export data and size of the resulting dump.
-| click-house-url      |     String |                                None | ClickHouse connection string
+| click-house-url      |     String |                                None | ClickHouse connection string, for example `clickhouse://default:clickhouse@172.19.0.4:9000/pmm` or `tcp://default:clickhouse@172.19.0.4:9000/pmm`.
 | critical-load        |     String |              CPU=90,RAM=90,MYRAM=30 | Critical load threshold values. For the CPU value, it is overall regardless of cores count: 0-100%. When the value of `critical-load` is reached, `pmm-dump` stops executing.
 | dashboard            |     String |                                None | Dashboard name to filter. Use multiple times to filter by multiple dashboards.
 | dump-core            |    Boolean |                                True | Export core metrics? To disable, specify option `no-dump-core`

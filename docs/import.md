@@ -7,7 +7,7 @@ The following table lists all options applicable for the `import` command.
 | Name                 | Value Type | Default                             | Description |
 |----------------------|------------|-------------------------------------|-------------|
 | allow-insecure-certs |    Boolean |                               False | Accept any certificate presented by the server and any host name in that certificate |
-| click-house-url      |     String |                                None | ClickHouse connection string |
+| click-house-url      |     String |                                None | ClickHouse connection string, for example `clickhouse://default:clickhouse@172.19.0.4:9000/pmm` or `tcp://default:clickhouse@172.19.0.4:9000/pmm` |
 | dump-core            |    Boolean |                                True | Import core metrics? To disable, specify option `no-dump-core` |
 | dump-path (-d)       |     String | pmm-dump-{CURRENT_TIMESTAMP}.tar.gz | Path to the dump file |
 | dump-qan             |    Boolean |                               False | Import QAN metrics? |

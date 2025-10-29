@@ -27,7 +27,7 @@ $ pmm-dump export --pmm-url='https://admin:admin@127.0.0.1' --allow-insecure-cer
 
 When you try to export Query Analytics (QAN) data with PMM Dump, it may fail with an error "Failed to create ClickHouse source".
 
-PMM Server stores QAN data in the ClickHouse server that listens on port 9000. Unlike ports for HTTP and HTTPS connections that are published when you install a PMM Server, the ClickHouse port is only exposed by Docker and not published. This means that while you can connect to your PMM server using your machine hostname and IP address, port 9000 cannot be accessed this way.
+PMM Server stores QAN data in the ClickHouse server that listens on port 9000. Unlike ports for HTTP and HTTPS connections that are published when you install a PMM Server, the ClickHouse port is only exposed by Docker and not published. This means that while you can connect to your PMM server using your machine hostname and IP address, port 9000 cannot be accessed this way. Also, starting from PMM 3, ClickHouse server bundled with PMM Server, does not accept connections outside of the Docker container.
 
 Therefore, if you point the `--pmm-url` option to the IP address of your machine or even localhost, you will not be able to export QAN data:
 
@@ -36,9 +36,11 @@ $ pmm-dump export --pmm-url='http://admin:admin@127.0.0.1' --dump-qan
 2021-10-09T13:14:51Z FTL Failed to create ClickHouse source: dial tcp 127.0.0.1:9000: connect: connection refused
 ```
 
-However, you can access ClickHouse if you use the IP that Docker assigns to your PMM Server. If you do not know this IP address, run the `docker inspect` command and search for the `IPAddress` value in the container `NetworkSettings`. Once you find the IP address that Docker assigned to your PMM Server container, you can use it to export QAN. See [Exporting Query Analytics Data](export_qan.md) for more details.
+However, you can adjust PMM ClickHouse configuration to allow connections outside the container. Then you can access ClickHouse if you use the IP that Docker assigns to your PMM Server. If you do not know this IP address, run the `docker inspect` command and search for the `IPAddress` value in the container `NetworkSettings`. Once you find the IP address that Docker assigned to your PMM Server container, you can use it to export QAN. See [Exporting Query Analytics Data](export_qan.md) for more details.
 
 An alternative solution would be publishing port 9000 at the time when you create a PMM Server container, but we do not recommend it, because doing so opens outside access to your raw queries and is not secure.
+
+If auto-generated URL for the ClickHouse does not work even if the ClickHouse port and the server are accessible, you can overwrite defaults by providing option `--click-house-url='tcp://default:clickhouse@<YOUR_DOCKER_PMM_IP_ADDRESS>:9000/pmm'`. Replace `<YOUR_DOCKER_PMM_IP_ADDRESS>` with the IP that Docker assigned to your PMM Server. 
 
 ## Import issues
 

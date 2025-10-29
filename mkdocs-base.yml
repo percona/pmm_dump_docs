@@ -168,9 +168,11 @@ nav:
           - "Exporting metrics for a specific database instance": export_instance.md
           - "Exporting metrics for a specific dashboard": export_dashboard.md
           - "Advanced filtering": export_advanced_filtering.md 
+          - "PMM Dump File Content": dump_content.md
           
     - Import metrics: 
           - "Overview": import.md
+          - "Importing Query Analytics Data": import_qan.md
 
     - Helper scripts:
           - "load-pmm-dump": load-pmm-dump.md
