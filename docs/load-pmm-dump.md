@@ -2,11 +2,11 @@
 
 The utility `load-pmm-dump` creates an empty PMM instance and prints commands which you can use to load the dump into a test PMM instance, redirect the PMM port to another machine, and destroy the Docker PMM container after use.
 
-The main goal of the utility is to aid in handling imported data coming from a PMM dump export file (or files). The load-pmm-dump script will:
+The main goal of the utility is to aid in handling imported data coming from a PMM dump export file (or files). The `load-pmm-dump` script will:
 
 - Create a PMM server container
 - Disable the nginx cap for `client_max_body_size`
-- Try to automatically import pmm-dump files
+- Try to automatically import `pmm-dump` dump files
 - Provide useful commands and information on how to further use the container
 
 **Note:** The PMM server container will be created without a data volume/container, so this tool is NOT for deploying any other kind of PMM server other than ones holding volatile and temporary data!
@@ -15,7 +15,7 @@ The main goal of the utility is to aid in handling imported data coming from a P
 
 There are three ways to run the script (all of them require at least one parameter -- the ticket number or container name string).
 
-- This will assume the latest PMM v2 server version, and will deploy one container: `pmm-server-CS0012345`
+- This will assume the latest PMM v3 server version, and will deploy one container: `pmm-server-CS0012345`
 
 ``` {.bash data-prompt="$" }
 load-pmm-dump CS0012345

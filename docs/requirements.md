@@ -15,10 +15,10 @@ If you want to run `pmm-dump` external to the PMM container/AMI/VM, the followin
 
      ``` {.bash data-prompt="$" }
      $ docker run --detach --restart always \
-       --publish 443:443 \
+       --publish 443:8443 \
        --publish 9000:9000 \
        -v pmm-data:/srv \
        --name pmm-server \
-       percona/pmm-server:2
+       percona/pmm-server:3
      ```
 

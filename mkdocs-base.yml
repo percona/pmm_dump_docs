@@ -168,9 +168,11 @@ nav:
           - "Exporting metrics for a specific database instance": export_instance.md
           - "Exporting metrics for a specific dashboard": export_dashboard.md
           - "Advanced filtering": export_advanced_filtering.md 
+          - "PMM Dump File Content": dump_content.md
           
     - Import metrics: 
           - "Overview": import.md
+          - "Importing Query Analytics Data": import_qan.md
 
     - Helper scripts:
           - "load-pmm-dump": load-pmm-dump.md
@@ -190,7 +192,7 @@ nav:
 
     - Release Notes:
           - "Release notes index": ReleaseNotes/index.md
-          - "PMM Dump 0.7.2-ga (2025-TBD)": ReleaseNotes/PMM-Dump-0.7.2-ga.md
+          - "PMM Dump 0.8.0-ga (2025-10-28)": ReleaseNotes/PMM-Dump-0.8.0-ga.md
           - "PMM Dump 0.7.1-ga (2025-04-02)": ReleaseNotes/PMM-Dump-0.7.1-ga.md
           - "PMM Dump 0.7.0-ga (2023-11-22)": ReleaseNotes/PMM-Dump-0.7.0-ga.md
           - "PMM Dump 0.6.4-rc (2023-06-30)": ReleaseNotes/PMM-Dump-0.6.4-rc.md

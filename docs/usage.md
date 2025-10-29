@@ -5,7 +5,7 @@
 PMM Dump exports collected metrics from a PMM instance into a tarball file. By default, the name of the resulting file is `pmm-dump-{UNIX_TIMESTAMP}.tar.gz.enc`.
 
 ``` {.bash data-prompt="$" }
-$ pmm-dump export --pmm-url='https://*****:*****@127.0.0.1' --allow-insecure-certs 
+$ pmm-dump export --pmm-url='https://*****:*****@127.0.0.1' --allow-insecure-certs --no-just-key
 2025-09-16T13:04:50+03:00 INF Credential user was obtained from pmm-url
 2025-09-16T13:04:50+03:00 INF Credential password was obtained from pmm-url
 2025-09-16T13:04:50+03:00 INF Exporting metrics...
@@ -35,7 +35,8 @@ To import data, start a new PMM instance and run the `pmm-dump import` command:
 
 ``` {.bash data-prompt="$" }
 $ pmm-dump import --pmm-url='https://admin:adminadmin@127.0.0.1' --allow-insecure-certs \
-> --dump-path=pmm-dump-1758017090.tar.gz.enc --pass=****************2025-09-16T13:06:47+03:00 INF Credential user was obtained from pmm-url
+> --dump-path=pmm-dump-1758017090.tar.gz.enc --pass=****************
+2025-09-16T13:06:47+03:00 INF Credential user was obtained from pmm-url
 2025-09-16T13:06:47+03:00 INF Credential password was obtained from pmm-url
 2025-09-16T13:06:47+03:00 INF Opening dump file... path=pmm-dump-1758017090.tar.gz.enc
 2025-09-16T13:06:48+03:00 INF Importing metrics...
@@ -78,4 +79,5 @@ Then you can remove the archive from the container using the command:
 ``` {.bash data-prompt="$" }
 $ sudo docker exec -it pmm-server rm /opt/pmm-dump-{UNIX TIMESTAMP}.tar.gz.enc
 ```
+
 Replace `pmm-dump-{UNIX TIMESTAMP}.tar.gz.enc` with the actual file name in your environment.

@@ -7,7 +7,7 @@ The following table lists all command-line options applicable within pmm-dump.
 | allow-insecure-certs | Global |    Boolean |                                   False | Accept any certificate presented by the server and any host name in that certificate. |
 | chunk-rows           | Export |    Integer |                                  100000 | Number of rows to fit into a single chunk (QAN metrics). Affects time to export data and size of the resulting dump. |
 | chunk-time-range     | Export |     String |                          5m (5 minutes) | Time range to fit into a single chunk (core metrics). Example values: '45s' (45 seconds), '5m' (5 minutes), '1h' (1 hour). Affects time to export data and size of the resulting dump. |
-| click-house-url      | Global |     String |                                    None | ClickHouse connection string. |
+| click-house-url      | Global |     String |                                    None | ClickHouse connection string, for example `clickhouse://default:clickhouse@172.19.0.4:9000/pmm` or `tcp://default:clickhouse@172.19.0.4:9000/pmm`. |
 | critical-load        | Export |     String |                  CPU=90,RAM=90,MYRAM=30 | Critical load threshold values. For CPU, the value is overall regardless of cores count: 0-100%. When the value of `critical-load` is reached, `pmm-dump` stops executing. |
 | dashboard            | Export |     String |                                    None | Dashboard name to filter. Use multiple times to filter by multiple dashboards. |
 | dump-core            | Global |    Boolean |                                    True | Export/import core metrics. To disable, specify the option `no-dump-core`. |
@@ -16,12 +16,13 @@ The following table lists all command-line options applicable within pmm-dump.
 | encryption           | Global |    Boolean |                                    True | Enable encryption. |
 | end-ts               | Export |     String |                       Current timestamp | End date-time to filter exported metrics in RFC3339 format, e.g. 2023-01-03T15:04:05Z07:00. |
 | export-services-info | Export |    Boolean |                                   False | Export overview info about all the services that are being monitored. |
+| force-pass-filepath  | Export |    Boolean |                                   False | Overwrite the file where the encrypted password is stored. |
 | help                 | Global |    Boolean |                                    None | Show context-sensitive help. Output does not include command-specific options. |
 | help-long            | Global |    Boolean |                                    None | Show context-sensitive help. Output includes command-specific options. |
 | help-man             | Global |    Boolean |                                    None | Generates a man page for the help. |
 | ignore-load          | Export |    Boolean |                                   False | Disable checking for load threshold values. |
 | instance             | Export |     String |                                    None | Service name to filter instances. Use multiple times to filter by multiple names. |
-| just-key             | Export |    Boolean |                                   False | Disable logging and only print the generated encryption key. |
+| just-key             | Export |    Boolean |                                    True | Disable logging and only print the generated encryption key. |
 | max-load             | Export |     String |                  CPU=70,RAM=80,MYRAM=10 | Max load threshold values. For CPU, the value is overall regardless of cores count: 0-100%. When the value of `max-load` is reached, `pmm-dump` stops executing and waits until resources are back to the specified values. |
 | pass                 | Global |     String |                                    None | Encryption password. |
 | pass-filepath        | Export |     String |                                    None | Filepath to output the generated encryption password. |

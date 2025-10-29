@@ -36,11 +36,11 @@ ARM builds for Linux, macOS, and Windows platforms are available at [Percona-Lab
 
 ## Compiling from source
 
-1. Check if the version of Go is 1.16 or newer.
+1. Check if the version of Go is 1.21 or newer.
 
     ``` {.bash data-prompt="$" }
     $ go version 
-    go version go1.19.4 linux/amd64
+    go version go1.24.1 linux/amd64
     ```
 
 2. Clone the PMM Dump [GitHub repository](https://github.com/percona/pmm-dump):

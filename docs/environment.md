@@ -17,6 +17,7 @@ PMM Dump supports environment variables, linked to the command-line options. The
 | PMM_DUMP_ENCRYPTION           | `--[no-]encryption`           |
 | PMM_DUMP_END_TS               | `--end-ts`                    |
 | PMM_DUMP_EXPORT_SERVICES_INFO | `--[no-]export-services-info` |
+| PMM_DUMP_FORCE_PASS_FILEPATH  | `--[no-]force-pass-filepath`  |
 | PMM_DUMP_HELP                 | `--[no-]help`                 |
 | PMM_DUMP_IGNORE_LOAD          | `--[no-]ignore-load`          |
 | PMM_DUMP_INSTANCE             | `--instance`                  |

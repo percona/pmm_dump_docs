@@ -7,7 +7,7 @@ PMM Dump supports the following commands.
 Prints help message and exits.
 
 ``` {.bash data-prompt="$" }
-$ pmm-dump --help
+$ pmm-dump help
 usage: pmm-dump [<flags>] <command> [<args> ...]
 
 Percona PMM Dump
@@ -36,9 +36,6 @@ Flags:
       --[no-]vm-native-data    Use VictoriaMetrics' native export format. Reduces dump size, but can be incompatible between PMM versions ($PMM_DUMP_VM_NATIVE_DATA)
       --[no-]encryption        Enable encryption ($PMM_DUMP_ENCRYPTION)
       --pass=PASS              Password for encryption/decryption ($PMM_DUMP_PASS)
-      --[no-]just-key          Disable logging and only leave key ($PMM_DUMP_JUST_KEY)
-      --pass-filepath=PASS-FILEPATH  
-                               Filepath to output encryption password ($PMM_DUMP_PASS_FILEPATH)
 
 Commands:
 help [<command>...]
@@ -57,10 +54,10 @@ version
     Shows tool version of the binary
 ```
 
-To print usage information for the specific option use syntax `pmm-dump help [<command>]`.
+To print usage information for the specific command use syntax `pmm-dump help [<command>]`.
 
 ``` {.bash data-prompt="$" }
-$ pmm-dump --help export
+$ pmm-dump help export
 usage: pmm-dump export [<flags>]
 
 Export PMM Server metrics to dump file.By default only the 4 last hours are exported, but it can be configured via start-ts/end-ts options
@@ -89,9 +86,6 @@ Flags:
       --[no-]vm-native-data      Use VictoriaMetrics' native export format. Reduces dump size, but can be incompatible between PMM versions ($PMM_DUMP_VM_NATIVE_DATA)
       --[no-]encryption          Enable encryption ($PMM_DUMP_ENCRYPTION)
       --pass=PASS                Password for encryption/decryption ($PMM_DUMP_PASS)
-      --[no-]just-key            Disable logging and only leave key ($PMM_DUMP_JUST_KEY)
-      --pass-filepath=PASS-FILEPATH  
-                                 Filepath to output encryption password ($PMM_DUMP_PASS_FILEPATH)
       --start-ts=START-TS        Start date-time to filter exported metrics, ex. 2006-01-02T15:04:05Z07:00 ($PMM_DUMP_START_TS)
       --end-ts=END-TS            End date-time to filter exported metrics, ex. 2006-01-02T15:04:05Z07:00 ($PMM_DUMP_END_TS)
       --ts-selector=TS-SELECTOR  Time series selector to pass to VM ($PMM_DUMP_TS_SELECTOR)
@@ -106,13 +100,18 @@ Flags:
       --critical-load="CPU=90,RAM=90,MYRAM=30"  
                                  Critical load threshold values. For the CPU value is overall regardless cores count: 0-100% ($PMM_DUMP_CRITICAL_LOAD)
       --[no-]stdout              Redirect output to STDOUT ($PMM_DUMP_STDOUT)
+      --[no-]just-key            Disable logging and only leave key ($PMM_DUMP_JUST_KEY)
+      --pass-filepath=PASS-FILEPATH  
+                                 Filepath to output encryption password ($PMM_DUMP_PASS_FILEPATH)
+      --[no-]force-pass-filepath  
+                                 Overwrite the file to where the encrypted password is output ($PMM_DUMP_FORCE_PASS_FILEPATH)
       --[no-]export-services-info  
                                  Export overview info about all the services, that are being monitored ($PMM_DUMP_EXPORT_SERVICES_INFO)
 ```
 
 ## `export`
 
-Export PMM Server metrics to dump file. By default, the last 4 hours of all performance metrics, excluding QAN, are exported. But this behavior can be overridden with options.
+Export PMM Server metrics to dump file. By default, the last 4 hours of all performance metrics, excluding QAN, are exported. This behavior can be overridden with options.
 
 For more details, see [Export](export.md).
 
