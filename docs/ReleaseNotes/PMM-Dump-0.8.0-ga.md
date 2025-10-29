@@ -1,4 +1,4 @@
-# PMM Dump 0.8.0-ga (Not Yet Released)
+# PMM Dump 0.8.0-ga
 
 * **Date**
 
