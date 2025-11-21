@@ -4,7 +4,7 @@ site_name: PMM Dump
 site_description: Documentation
 site_author: Percona LLC
 site_url: ""
-copyright: Percona LLC and/or its affiliates, &#169; 2009 - 2023
+copyright: Percona LLC and/or its affiliates, &#169; 2009 - 2025
 use_directory_urls: false
 repo_name: percona/pmm_dump_docs
 repo_url: https://github.com/percona/pmm_dump_docs
@@ -62,6 +62,7 @@ extra_css:
   - css/design.css
   - css/osano.css
   - css/pmm.css
+  - css/rating.css
 
 extra_javascript:
   - js/promptremover.js
@@ -69,7 +70,7 @@ extra_javascript:
   - js/toctree.js
   - js/lightgallery.min.js
   - js/consent.js
-
+  - js/rating.js
 
 markdown_extensions:
   attr_list: {}
@@ -111,7 +112,13 @@ markdown_extensions:
 
 plugins:
   search: {}
-  git-revision-date-localized: {}
+  git-revision-date-localized:
+    enable_creation_date: true
+    enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
+  git-committers:
+    enabled: !ENV [CI, false]
+    repository: percona/pmm_dump_docs
+    branch: "main"   
   meta-descriptions:
     export_csv: false
     quiet: false
