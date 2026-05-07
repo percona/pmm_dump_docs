@@ -1,6 +1,5 @@
 # PMM Dump Release Notes
 
-* [*PMM Dump* 0.8.1-ga](PMM-Dump-0.8.1-ga.md)
 * [*PMM Dump* 0.8.0-ga](PMM-Dump-0.8.0-ga.md)
 * [*PMM Dump* 0.7.1-ga](PMM-Dump-0.7.1-ga.md)
 * [*PMM Dump* 0.7.0-ga](PMM-Dump-0.7.0-ga.md)
