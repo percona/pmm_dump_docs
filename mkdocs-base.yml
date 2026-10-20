@@ -199,6 +199,7 @@ nav:
 
     - Release Notes:
           - "Release notes index": ReleaseNotes/index.md
+          - "PMM Dump 0.8.3-ga (2026-10-20)": ReleaseNotes/PMM-Dump-0.8.3-ga.md
           - "PMM Dump 0.8.2-ga (2026-09-21)": ReleaseNotes/PMM-Dump-0.8.2-ga.md
           - "PMM Dump 0.8.1-ga (2026-05-08)": ReleaseNotes/PMM-Dump-0.8.1-ga.md
           - "PMM Dump 0.8.0-ga (2025-10-28)": ReleaseNotes/PMM-Dump-0.8.0-ga.md
