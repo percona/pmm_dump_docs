@@ -1,7 +1,7 @@
 # MkDocs configuration
 # Used as base - look for .yml files with INHERIT
 site_name: PMM Dump
-site_description: Documentation
+site_description: "PMM Dump, a client utility that exports performance metrics from a PMM Server as a logical backup and imports them into another PMM Server, with usage and reference guides"
 site_author: Percona LLC
 site_url: ""
 copyright: Percona LLC and/or its affiliates, &#169; 2009 - 2025
